@@ -26,6 +26,10 @@ Route::get('/loginForm', function () {
     return view('loginForm');
 });
 
+Route::get('/home', function () {
+    return view('home');
+});
+
 // Or if you want to render counter with Inertia (JS component)
 // Route::get('/counter', function () {
 //     return Inertia::render('Counter');
