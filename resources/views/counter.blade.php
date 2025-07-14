@@ -14,7 +14,7 @@
             @csrf
             <input type="hidden" name="count" value="{{ session('count', 0) + 1 }}">
             <p class="text-xl mb-4">Current Count: {{ session('count', 0) }}</p>
-            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">
+            <button type="submit" class=git remote add origin -600 text-white px-4 py-2 rounded">
                 Increment
             </button>
         </form>
