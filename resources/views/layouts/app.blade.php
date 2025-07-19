@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Plant Store</title>
+    <meta charset="UTF-8">
+    <title>@yield('title')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-    @include('partials.navbar') <!-- Shared navigation -->
-    @yield('content') <!-- Dynamic content from child views -->
-    @include('partials.footer') <!-- Shared footer -->
+    @include('partials.navbar')
+    <main class="container mx-auto">
+        @yield('content')  
+    </main>
+    @include('partials.footer')
 </body>
 </html>

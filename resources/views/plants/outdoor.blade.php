@@ -1,12 +1,21 @@
-@extends('layouts.app')
-
-@section('content')
-    <div class="container mx-auto py-8">
-        <h1 class="text-3xl font-bold text-green-700 mb-6">Outdoor Plants</h1>
-        
-        <!-- Your outdoor plants specific content here -->
-        <p class="text-gray-600 mb-4">Explore plants that thrive in outdoor environments.</p>
-        
-        <!-- Plant listings would go here -->
-    </div>
-@endsection
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('title', 'GreenScape')</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+<body class="bg-gray-50">
+    @include('partials.navbar')
+    
+    
+    <main>
+        @yield('content')
+    </main>
+    
+    @include('partials.footer')
+    
+    @yield('scripts')
+</body>
+</html>

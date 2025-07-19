@@ -8,32 +8,16 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CartController;
 
+// Welcome route (choose ONE approach - Inertia or Blade)
 Route::get('/', function () {
-    return Inertia::render('welcome');
-})->name('welcome');  
-
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/home', function () {
-        return Inertia::render('home');
-    })->name('home');  
-});
-
-// If 'counter.blade.php' is a blade view file in resources/views
-Route::get('/counter', function () {
-    return view('counter');
-});
-
-Route::get('/index', function () {
-    return view('index');
-});
-
-Route::get('/loginForm', function () {
-    return view('loginForm');
-});
+    return Inertia::render('Welcome'); // Inertia approach
+    // OR for Blade:
+    // return view('welcome');
+})->name('welcome');
 
 // Home route
-Route::get('/', function () {
-    return view('welcome'); // Or your home view
+Route::get('/home', function () {
+    return view('home');
 })->name('home');
 
 // Plant category routes
@@ -48,16 +32,24 @@ Route::get('/services', [ServiceController::class, 'index'])->name('services');
 Route::get('/booking', [BookingController::class, 'index'])->name('booking');
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 
-// Or if you want to render counter with Inertia (JS component)
+// Authentication routes
+Route::get('/login', function () {
+    return view('auth.login'); // Better to put login in auth folder
+})->name('login');
+
+// Remove these duplicate or unnecessary routes:
 // Route::get('/counter', function () {
-//     return Inertia::render('Counter');
+//     return view('counter');
+// });
+// 
+// Route::get('/index', function () {
+//     return view('index');
+// });
+// 
+// Route::get('/loginForm', function () {
+//     return view('loginForm');
 // });
 
-require __DIR__.'/settings.php';
+// Include additional route files (ONCE)
 require __DIR__.'/auth.php';
-
-
-
-
 require __DIR__.'/settings.php';
-require __DIR__.'/auth.php';
