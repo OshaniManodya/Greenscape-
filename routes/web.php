@@ -29,6 +29,13 @@ Route::get('/loginForm', function () {
 Route::get('/home', function () {
     return view('home');
 });
+use App\Http\Controllers\PlantController;
+
+Route::get('/indoor-plants', [PlantController::class, 'indoor'])->name('plants.indoor');
+Route::get('/outdoor-plants', [PlantController::class, 'outdoor'])->name('plants.outdoor');
+Route::get('/herb-plants', [PlantController::class, 'herb'])->name('plants.herb');
+Route::get('/flowering-plants', [PlantController::class, 'flowering'])->name('plants.flowering');
+
 
 // Or if you want to render counter with Inertia (JS component)
 // Route::get('/counter', function () {

@@ -7,129 +7,44 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* Flower Rain Animation */
-        .flower-rain {
-            position: fixed;
-            top: -10px;
-            z-index: 1000;
-            font-size: 20px;
-            animation: fall linear infinite;
-            pointer-events: none;
-        }
-
-        @keyframes fall {
-            0% { transform: translateY(-100vh) rotate(0deg); }
-            100% { transform: translateY(100vh) rotate(360deg); }
-        }
-
-        /* Gradient Overlay */
-        .gradient-overlay {
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.8), rgba(16, 185, 129, 0.8));
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #22c55e;
-            border-radius: 4px;
-        }
-
-        /* Button Hover Effects */
-        .btn-hover {
-            transition: all 0.3s ease;
-        }
-
-        .btn-hover:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Modal style */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: none;
-            border-radius: 10px;
-            position: relative;
-            z-index: 10000;
-            width: 80%;
-            max-width: 400px;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .close:hover {
-            color: black;
-        }
-
-        /* Hero Section for Outdoor Plants */
-        .outdoor-hero {
-            background-image: url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae');
-            background-size: cover;
-            background-position: center;
-            height: 400px;
-        }
+       
     </style>
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <i class="fas fa-leaf text-green-600 text-2xl mr-2"></i>
-                    <span class="text-xl font-bold text-green-800">GreenScape</span>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-green-600 transition duration-300">Home</a>
-                    <div class="relative group">
-                        <a href="#" class="text-gray-700 hover:text-green-600 transition duration-300">Plants</a>
-                        <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 w-48">
-                            <a href="indoor-plants.html" class="block px-4 py-2 text-gray-700 hover:bg-green-50">Indoor Plants</a>
-                            <a href="outdoor-plants.html" class="block px-4 py-2 text-gray-700 hover:bg-green-50">Outdoor Plants</a>
-                            <a href="herb-plants.html" class="block px-4 py-2 text-gray-700 hover:bg-green-50">Herb Plants</a>
-                            <a href="flowering-plants.html" class="block px-4 py-2 text-gray-700 hover:bg-green-50">Flowering Plants</a>
-                        </div>
-                    </div>
-                    <a href="landscaping.html" class="text-gray-700 hover:text-green-600 transition duration-300">Landscaping</a>
-                    <a href="services.html" class="text-gray-700 hover:text-green-600 transition duration-300">Services</a>
-                    <a href="booking.html" class="text-gray-700 hover:text-green-600 transition duration-300">Booking</a>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <a href="cart.html" class="text-gray-700 hover:text-green-600 transition duration-300">
-                        <i class="fas fa-shopping-cart text-xl"></i>
-                        <span class="bg-green-600 text-white rounded-full px-2 py-1 text-xs ml-1" id="cart-count">0</span>
-                    </a>
-                    <button onclick="openModal('loginModal')" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-300">Login</button>
+        <div class ="max-w-7xl mx-auto px-4">
+                <div class ="flex justify-between items-center h-16">
+                    <div class="flex items-center">
+                        <i class="fas fa-leaf text-green-600 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-green-800"> GreenScape</span>
+                    </div>       
+                    <div class="hidden md:flex space-x-8">
+                        <a href="#home" class="text-gray-700 hover:text-green-600 transition duration-300">Home</a>
+                        <div class="relative group">
+                            <a href="#" class="text-gray-700 hover:text-green-600 transition duration-300">Plants</a>
+                            <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 w-48">
+                                <a href="indoor-plants.php" class="block px-4 py-2 text-gray-700 hover:bg-green-50"> Indoor Plants </a>
+                               <a href="{{ route('plants.outdoor') }}" class="block px-4 py-2 text-gray-700 hover:bg-green-50"> Outdoor Plants </a>
+                                <a href="herb-plants.php" class="block px-4 py-2 text-gray-700 hover:bg-green-50"> Herb Plants </a>
+                                <a href="flowering-plants.php" class="block px-4 py-2 text-gray-700 hover:bg-green-50"> Flowering plants </a>
+                            </div>
+                        </div>   
+                        <a href="landscaping.php" class="text-gray-700 hover:text-green-600 transition-duration-300">Landscaping</a>
+                        <a href="services.php" class="text-gray-700 hover:text-green-600 transition-duration-300">Service</a>
+                        <a href="booking.php" class="text-gray-700 hover:text-green-600 transition-duration-300">Booking</a>
+                    </div>     
+
+                    <div class="flex items-center space-x-4" >
+                        <a href="cart.php" class="text-gray-700 hover:text-green-600 transition duration-300">
+                            <i class="fas fa-shopping-cart text-xl"></i>
+                            <span class="bg-green-600 text-white rounded-full px-2 py-1 text-xs ml-1" id="cart-count">0</span>
+                        </a>    
+                        <button onclick="openModal('loginModal')" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-300">Login</button>
                     <button onclick="openModal('registerModal')" class="bg-green-800 text-white px-4 py-2 rounded-lg hover:bg-green-900 transition duration-300">Register</button>
+                    </div>
                 </div>
-            </div>
-        </div>
+        </div>    
     </nav>
 
     <!-- Hero Section -->
@@ -363,7 +278,8 @@
                     <h3 class="text-lg font-semibold mb-4">Plant Categories</h3>
                     <ul class="space-y-2">
                         <li><a href="indoor-plants.html" class="text-gray-400 hover:text-white transition duration-300">Indoor Plants</a></li>
-                        <li><a href="outdoor-plants.html" class="text-gray-400 hover:text-white transition duration-300">Outdoor Plants</a></li>
+                        <a href="{{ url('/outdoor-plants') }}" class="block px-4 py-2 text-gray-700 hover:bg-green-50"> Outdoor Plants </a>
+
                         <li><a href="herb-plants.html" class="text-gray-400 hover:text-white transition duration-300">Herb Plants</a></li>
                         <li><a href="flowering-plants.html" class="text-gray-400 hover:text-white transition duration-300">Flowering Plants</a></li>
                     </ul>

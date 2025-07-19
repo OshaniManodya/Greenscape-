@@ -126,7 +126,7 @@
                             <a href="#" class="text-gray-700 hover:text-green-600 transition duration-300">Plants</a>
                             <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 w-48">
                                 <a href="indoor-plants.php" class="block px-4 py-2 text-gray-700 hover:bg-green-50"> Indoor Plants </a>
-                                <a href="outdoor-plants.blade.php" class="block px-4 py-2 text-gray-700 hover:bg-green-50"> Outdoor Plants </a>
+                               <a href="outdoor-plants.php" class="block px-4 py-2 text-gray-700 hover:bg-green-50"> Outdoor Plants </a>
                                 <a href="herb-plants.php" class="block px-4 py-2 text-gray-700 hover:bg-green-50"> Herb Plants </a>
                                 <a href="flowering-plants.php" class="block px-4 py-2 text-gray-700 hover:bg-green-50"> Flowering plants </a>
                             </div>
