@@ -4,25 +4,28 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PlantController extends Controller
+class PlantController extends Controller{
+public function indoor()
 {
-    public function indoor()
-    {
-        return view('plants.indoor'); // Loads resources/views/plants/indoor.blade.php
-    }
+    $indoorPlants = Plant::where('category', 'indoor')->get();
+    return view('plants.indoor', compact('indoorPlants'));
+}
 
-    public function outdoor()
-    {
-        return view('plants.outdoor');
-    }
+public function outdoor()
+{
+    $outdoorPlants = Plant::where('category', 'outdoor')->get();
+    return view('plants.outdoor', compact('outdoorPlants'));
+}
 
-    public function herb()
-    {
-        return view('plants.herb');
-    }
+public function herb()
+{
+    $outdoorPlants = Plant::where('category', 'herb')->get();
+    return view('plants.herb', compact('herbPlants'));
+}
 
-    public function flowering()
-    {
-        return view('plants.flowering');
-    }
+public function flowering()
+{
+    $outdoorPlants = Plant::where('category', 'flowering')->get();
+    return view('plants.flowering', compact('floweringPlants'));
+}
 }
