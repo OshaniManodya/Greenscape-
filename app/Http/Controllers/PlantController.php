@@ -2,30 +2,68 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Plant;
+use App\Models\Cart;
 
-class PlantController extends Controller{
-public function indoor()
+class PlantController extends Controller
 {
-    $indoorPlants = Plant::where('category', 'indoor')->get();
-    return view('plants.indoor', compact('indoorPlants'));
-}
+    /**
+     * Shared method to set session data
+     */
+    protected function setCommonSessionData($plants)
+    {
+        session([
+            'cart_count' => auth()->check() 
+                ? Cart::where('user_id', auth()->id())->count() 
+                : 0,
+            'business_hours' => config('app.business_hours', 'Mon-Fri: 9AM-5PM'),
+            'featured_plant' => $plants->isNotEmpty()
+                ? 'Featured: ' . $plants->first()->name
+                : 'Our ' . ucfirst($plants->first()->category ?? 'Plant') . ' Collection'
+        ]);
+    }
 
-public function outdoor()
-{
-    $outdoorPlants = Plant::where('category', 'outdoor')->get();
-    return view('plants.outdoor', compact('outdoorPlants'));
-}
+    public function indoor()
+    {
+        $plants = Plant::where('category', 'indoor')->get();
+        $this->setCommonSessionData($plants);
+        
+        return view('plants.indoor', [
+            'indoorPlants' => $plants,
+            'pageTitle' => 'Indoor Plants Collection'
+        ]);
+    }
 
-public function herb()
-{
-    $outdoorPlants = Plant::where('category', 'herb')->get();
-    return view('plants.herb', compact('herbPlants'));
-}
+    public function outdoor()
+    {
+        $plants = Plant::where('category', 'outdoor')->get();
+        $this->setCommonSessionData($plants);
+        
+        return view('plants.outdoor', [
+            'outdoorPlants' => $plants,
+            'pageTitle' => 'Outdoor Plants Collection'
+        ]);
+    }
 
-public function flowering()
-{
-    $outdoorPlants = Plant::where('category', 'flowering')->get();
-    return view('plants.flowering', compact('floweringPlants'));
-}
+    public function herb()
+    {
+        $plants = Plant::where('category', 'herb')->get();
+        $this->setCommonSessionData($plants);
+        
+        return view('plants.herb', [
+            'herbPlants' => $plants,  // Fixed variable name
+            'pageTitle' => 'Herb Plants Collection'
+        ]);
+    }
+
+    public function flowering()
+    {
+        $plants = Plant::where('category', 'flowering')->get();
+        $this->setCommonSessionData($plants);
+        
+        return view('plants.flowering', [
+            'floweringPlants' => $plants,
+            'pageTitle' => 'Flowering Plants Collection'
+        ]);
+    }
 }

@@ -21,10 +21,10 @@ Route::get('/home', function () {
 })->name('home');
 
 // Plant category routes
-Route::get('/indoor-plants', [PlantController::class, 'indoor'])->name('plants.indoor');
-Route::get('/outdoor-plants', [PlantController::class, 'outdoor'])->name('plants.outdoor');
-Route::get('/herb-plants', [PlantController::class, 'herb'])->name('plants.herb');
-Route::get('/flowering-plants', [PlantController::class, 'flowering'])->name('plants.flowering');
+Route::get('/plants/indoor', [PlantController::class, 'indoor'])->name('plants.indoor');
+Route::get('/plants/outdoor', [PlantController::class, 'outdoor'])->name('plants.outdoor');
+Route::get('/plants/herb', [PlantController::class, 'herb'])->name('plants.herb');
+Route::get('/plants/flowering', [PlantController::class, 'flowering'])->name('plants.flowering');
 
 // Other page routes
 Route::get('/landscaping', [LandscapingController::class, 'index'])->name('landscaping');
@@ -36,6 +36,10 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::get('/login', function () {
     return view('auth.login'); // Better to put login in auth folder
 })->name('login');
+
+Route::get('/indoor', function () {
+     return view('indoor');
+ });
 
 // Remove these duplicate or unnecessary routes:
 // Route::get('/counter', function () {
