@@ -24,15 +24,16 @@ class PlantController extends Controller
     }
 
     public function indoor()
-    {
-        $plants = Plant::where('category', 'indoor')->get();
-        $this->setCommonSessionData($plants);
-        
-        return view('plants.indoor', [
-            'indoorPlants' => $plants,
-            'pageTitle' => 'Indoor Plants Collection'
-        ]);
-    }
+{
+    $plants = Plant::where('category', 'indoor')->get();
+    $this->setCommonSessionData($plants);
+    
+    return view('plants.indoor', [
+        'indoorPlants' => $plants,
+        'pageTitle' => 'Indoor Plants Collection'
+    ]);
+}
+
 
     public function outdoor()
     {

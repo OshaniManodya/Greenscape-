@@ -37,9 +37,6 @@ Route::get('/login', function () {
     return view('auth.login'); // Better to put login in auth folder
 })->name('login');
 
-Route::get('/indoor', function () {
-     return view('indoor');
- });
 
 // Remove these duplicate or unnecessary routes:
 // Route::get('/counter', function () {

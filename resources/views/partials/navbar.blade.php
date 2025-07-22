@@ -6,23 +6,24 @@
                         <span class="text-xl font-bold text-green-800"> GreenScape</span>
                     </div>       
                     <div class="hidden md:flex space-x-8">
-                        <a href="#home" class="text-gray-700 hover:text-green-600 transition duration-300">Home</a>
+                        <a href="{{ route('home') }}" class="text-gray-700 hover:text-green-600 transition duration-300">Home</a>
                         <div class="relative group">
                             <a href="#" class="text-gray-700 hover:text-green-600 transition duration-300">Plants</a>
                             <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 w-48">
-                                <a href="indoor.php" class="block px-4 py-2 text-gray-700 hover:bg-green-50"> Indoor Plants </a>
-                               <a href="outdoor.php" class="block px-4 py-2 text-gray-700 hover:bg-green-50"> Outdoor Plants </a>
-                                <a href="herb.php" class="block px-4 py-2 text-gray-700 hover:bg-green-50"> Herb Plants </a>
-                                <a href="flowering.php" class="block px-4 py-2 text-gray-700 hover:bg-green-50"> Flowering plants </a>
+                                <a href="{{ route('plants.indoor') }}" class="block px-4 py-2 text-gray-700 hover:bg-green-50">Indoor Plants</a>
+                                <a href="{{ route('plants.outdoor') }}" class="block px-4 py-2 text-gray-700 hover:bg-green-50">Outdoor Plants</a>
+                                <a href="{{ route('plants.herb') }}" class="block px-4 py-2 text-gray-700 hover:bg-green-50">Herb Plants</a>
+                                <a href="{{ route('plants.flowering') }}" class="block px-4 py-2 text-gray-700 hover:bg-green-50">Flowering Plants</a>
+
                             </div>
                         </div>   
-                        <a href="landscaping.php" class="text-gray-700 hover:text-green-600 transition-duration-300">Landscaping</a>
-                        <a href="services.php" class="text-gray-700 hover:text-green-600 transition-duration-300">Service</a>
-                        <a href="booking.php" class="text-gray-700 hover:text-green-600 transition-duration-300">Booking</a>
+                        <a href="{{ route('landscaping') }}" class="text-gray-700 hover:text-green-600 transition-duration-300">Landscaping</a>
+                        <a href="{{ route('services') }}" class="text-gray-700 hover:text-green-600 transition-duration-300">Service</a>
+                        <a href="{{ route('booking') }}" class="text-gray-700 hover:text-green-600 transition-duration-300">Booking</a>
                     </div>     
 
                     <div class="flex items-center space-x-4" >
-                        <a href="cart.php" class="text-gray-700 hover:text-green-600 transition duration-300">
+                        <a href="{{ route('cart') }}" class="text-gray-700 hover:text-green-600 transition duration-300">
                             <i class="fas fa-shopping-cart text-xl"></i>
                             <span class="bg-green-600 text-white rounded-full px-2 py-1 text-xs ml-1" id="cart-count">0</span>
                         </a>    
