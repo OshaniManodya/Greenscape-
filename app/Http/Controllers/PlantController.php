@@ -2,44 +2,43 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Plant;
-use App\Models\Cart;
-
 class PlantController extends Controller
 {
-    /**
-     * Shared method to set session data
-     */
     protected function setCommonSessionData($plants)
     {
         session([
-            'cart_count' => auth()->check() 
-                ? Cart::where('user_id', auth()->id())->count() 
-                : 0,
+            'cart_count' => 0, // default to 0 since not checking DB
             'business_hours' => config('app.business_hours', 'Mon-Fri: 9AM-5PM'),
-            'featured_plant' => $plants->isNotEmpty()
-                ? 'Featured: ' . $plants->first()->name
-                : 'Our ' . ucfirst($plants->first()->category ?? 'Plant') . ' Collection'
+            'featured_plant' => !empty($plants)
+                ? 'Featured: ' . $plants[0]['name']
+                : 'Our Plant Collection'
         ]);
     }
 
     public function indoor()
-{
-    $plants = Plant::where('category', 'indoor')->get();
-    $this->setCommonSessionData($plants);
-    
-    return view('plants.indoor', [
-        'indoorPlants' => $plants,
-        'pageTitle' => 'Indoor Plants Collection'
-    ]);
-}
+    {
+        $plants = [
+            ['name' => 'Snake Plant', 'price' => 1200, 'image' => '/images/snakeplant.jpg'],
+            ['name' => 'Peace Lily', 'price' => 1500, 'image' => '/images/peacelily.jpg'],
+        ];
 
+        $this->setCommonSessionData($plants);
+
+        return view('plants.indoor', [
+            'indoorPlants' => $plants,
+            'pageTitle' => 'Indoor Plants Collection'
+        ]);
+    }
 
     public function outdoor()
     {
-        $plants = Plant::where('category', 'outdoor')->get();
+        $plants = [
+            ['name' => 'Areca Palm', 'price' => 1800, 'image' => '/images/arecapalm.jpg'],
+            ['name' => 'Bougainvillea', 'price' => 1300, 'image' => '/images/bougainvillea.jpg'],
+        ];
+
         $this->setCommonSessionData($plants);
-        
+
         return view('plants.outdoor', [
             'outdoorPlants' => $plants,
             'pageTitle' => 'Outdoor Plants Collection'
@@ -48,20 +47,28 @@ class PlantController extends Controller
 
     public function herb()
     {
-        $plants = Plant::where('category', 'herb')->get();
+        $plants = [
+            ['name' => 'Mint', 'price' => 500, 'image' => '/images/mint.jpg'],
+            ['name' => 'Basil', 'price' => 600, 'image' => '/images/basil.jpg'],
+        ];
+
         $this->setCommonSessionData($plants);
-        
+
         return view('plants.herb', [
-            'herbPlants' => $plants,  // Fixed variable name
+            'herbPlants' => $plants,
             'pageTitle' => 'Herb Plants Collection'
         ]);
     }
 
     public function flowering()
     {
-        $plants = Plant::where('category', 'flowering')->get();
+        $plants = [
+            ['name' => 'Rose', 'price' => 700, 'image' => '/images/rose.jpg'],
+            ['name' => 'Jasmine', 'price' => 750, 'image' => '/images/jasmine.jpg'],
+        ];
+
         $this->setCommonSessionData($plants);
-        
+
         return view('plants.flowering', [
             'floweringPlants' => $plants,
             'pageTitle' => 'Flowering Plants Collection'
