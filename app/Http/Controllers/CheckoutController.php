@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class CartController extends Controller
+class CheckoutController extends Controller
 {
     // Show the cart page
     public function index()
     {
         // Later you can load cart items from DB here
-        return view('cart');  // Make sure you have resources/views/cart/index.blade.php
+        return view('checkout');  
     }
 }

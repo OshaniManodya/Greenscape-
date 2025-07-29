@@ -7,6 +7,7 @@ use App\Http\Controllers\LandscapingController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 
 // Welcome route (choose ONE approach - Inertia or Blade)
 Route::get('/', function () {
@@ -28,9 +29,10 @@ Route::get('/plants/flowering', [PlantController::class, 'flowering'])->name('pl
 
 // Other page routes
 Route::get('/landscaping', [LandscapingController::class, 'index'])->name('landscaping');
-Route::get('/services', [ServiceController::class, 'index'])->name('services');
+Route::get('/service', [ServiceController::class, 'index'])->name('service');
 Route::get('/booking', [BookingController::class, 'index'])->name('booking');
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 
 // Authentication routes
 Route::get('/login', function () {

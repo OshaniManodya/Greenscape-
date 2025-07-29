@@ -75,39 +75,39 @@
         }
 
         /*Model style */
-        .modal{
-            display:none;
-            position:fixed;
-            z-index:9999;
-            left:0;
-            top:0;
-            width:100%;
-            height:100%;
-            background-color:rgba(0,0,0,0.5);
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
         }
-
+        
         .modal-content {
-            background-color:#fefefe;
-            margin: 15% auto;
-            padding:20px;
-            border:none;
-            border-radius:10px;
-            position: relative;
-            z-index: 10000;
-            width:80%;
-            max-width:400px;
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: none;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
         }
-
-        .close{
-            color:#aaa;
-            float:right;
-            font-size:28px;
-            font-weight:bold;
-            cursor:pointer;
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
         }
-
-        .close:hover{
-            color:black; 
+        
+        .close:hover {
+            color: black;
         }
     </style>
 </head>
@@ -121,24 +121,24 @@
                         <span class="text-xl font-bold text-green-800"> GreenScape</span>
                     </div>       
                     <div class="hidden md:flex space-x-8">
-                        <a href="#home" class="text-gray-700 hover:text-green-600 transition duration-300">Home</a>
+                        <a href="{{ route('home') }}" class="text-gray-700 hover:text-green-600 transition duration-300">Home</a>
                         <div class="relative group">
                             <a href="#" class="text-gray-700 hover:text-green-600 transition duration-300">Plants</a>
                             <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 w-48">
-                                <a href="/plants/indoor" class="block px-4 py-2 text-gray-700 hover:bg-green-50">Indoor Plants</a>
-                                <a href="" class="block px-4 py-2 text-gray-700 hover:bg-green-50">Outdoor Plants</a>
-                                <a href="" class="block px-4 py-2 text-gray-700 hover:bg-green-50">Herb Plants</a>
-                                <a href="" class="block px-4 py-2 text-gray-700 hover:bg-green-50">Flowering Plants</a>
+                                <a href="{{ route('plants.indoor') }}" class="block px-4 py-2 text-gray-700 hover:bg-green-50">Indoor Plants</a>
+                                <a href="{{ route('plants.outdoor') }}" class="block px-4 py-2 text-gray-700 hover:bg-green-50">Outdoor Plants</a>
+                                <a href="{{ route('plants.herb') }}" class="block px-4 py-2 text-gray-700 hover:bg-green-50">Herb Plants</a>
+                                <a href="{{ route('plants.flowering') }}" class="block px-4 py-2 text-gray-700 hover:bg-green-50">Flowering Plants</a>
 
                             </div>
                         </div>   
-                        <a href="" class="text-gray-700 hover:text-green-600 transition-duration-300">Landscaping</a>
-                        <a href="" class="text-gray-700 hover:text-green-600 transition-duration-300">Service</a>
-                        <a href="" class="text-gray-700 hover:text-green-600 transition-duration-300">Booking</a>
+                        <a href="{{ route('landscaping') }}" class="text-gray-700 hover:text-green-600 transition-duration-300">Landscaping</a>
+                        <a href="{{ route('service') }}" class="text-gray-700 hover:text-green-600 transition-duration-300">Service</a>
+                        <a href="{{ route('booking') }}" class="text-gray-700 hover:text-green-600 transition-duration-300">Booking</a>
                     </div>     
 
                     <div class="flex items-center space-x-4" >
-                        <a href="" class="text-gray-700 hover:text-green-600 transition duration-300">
+                        <a href="{{ route('cart') }}" class="text-gray-700 hover:text-green-600 transition duration-300">
                             <i class="fas fa-shopping-cart text-xl"></i>
                             <span class="bg-green-600 text-white rounded-full px-2 py-1 text-xs ml-1" id="cart-count">0</span>
                         </a>    
@@ -147,7 +147,7 @@
                     </div>
                 </div>
         </div>    
-    </nav>        
+    </nav>         
     <!--Hero section with image slider-->
     <section class="slider-container">
         <div class="slider-track" id="slider-track">
