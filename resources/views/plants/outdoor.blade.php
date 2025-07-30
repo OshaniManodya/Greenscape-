@@ -392,7 +392,7 @@
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-xl font-bold text-green-600">600.00</span>
-                        <button onclick="addToCart('Lamb''s ear', 600)" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-300">
+                        <button onclick="addToCart('Lamb''s ear', 600.00)" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-300">
                             <i class="fas fa-cart-plus"></i>
                         </button>
                     </div>
@@ -576,6 +576,7 @@
                     <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
                         <li><a href="index.php" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                   
                         <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Plants</a></li>
                         <li><a href="landscaping.php" class="text-gray-400 hover:text-white transition duration-300">Landscaping</a></li>
                         <li><a href="services.php" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
@@ -586,8 +587,8 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Plant Categories</h3>
                     <ul class="space-y-2">
-                        <li><a href="indoor-plants.php" class="text-green-400 font-semibold">Indoor Plants</a></li>
-                        <li><a href="outdoor-plants.php" class="text-gray-400 hover:text-white transition duration-300">Outdoor Plants</a></li>
+                        <li><a href="indoor-plants.php" class="text-gray-400 hover:text-white transition duration-300">Indoor Plants</a></li>
+                        <li><a href="outdoor-plants.php" class="text-green-400 font-semibold">Outdoor Plants</a></li>
                         <li><a href="herb-plants.php" class="text-gray-400 hover:text-white transition duration-300">Herb Plants</a></li>
                         <li><a href="flowering-plants.php" class="text-gray-400 hover:text-white transition duration-300">Flowering Plants</a></li>
                     </ul>
