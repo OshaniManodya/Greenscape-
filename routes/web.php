@@ -38,6 +38,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware('auth')->name('dashboard');
 
+Route::get('/admin/projects', function () {
+    return view('admin.projects'); // make sure you have resources/views/admin/projects.blade.php
+})->middleware('auth')->name('admin.projects');
+
 
 // Authentication routes
 Route::get('/login', function () {

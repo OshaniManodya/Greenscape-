@@ -112,41 +112,7 @@
 </head>
 <body class="bg-gray-50">
     <!--Navigation-->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class ="max-w-7xl mx-auto px-4">
-                <div class ="flex justify-between items-center h-16">
-                    <div class="flex items-center">
-                        <i class="fas fa-leaf text-green-600 text-2xl mr-2"></i>
-                        <span class="text-xl font-bold text-green-800"> GreenScape</span>
-                    </div>       
-                    <div class="hidden md:flex space-x-8">
-                        <a href="{{ route('home') }}" class="text-gray-700 hover:text-green-600 transition duration-300">Home</a>
-                        <div class="relative group">
-                            <a href="#" class="text-gray-700 hover:text-green-600 transition duration-300">Plants</a>
-                            <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 w-48">
-                                <a href="{{ route('plants.indoor') }}" class="block px-4 py-2 text-gray-700 hover:bg-green-50">Indoor Plants</a>
-                                <a href="{{ route('plants.outdoor') }}" class="block px-4 py-2 text-gray-700 hover:bg-green-50">Outdoor Plants</a>
-                                <a href="{{ route('plants.herb') }}" class="block px-4 py-2 text-gray-700 hover:bg-green-50">Herb Plants</a>
-                                <a href="{{ route('plants.flowering') }}" class="block px-4 py-2 text-gray-700 hover:bg-green-50">Flowering Plants</a>
-
-                            </div>
-                        </div>   
-                        <a href="{{ route('landscaping') }}" class="text-gray-700 hover:text-green-600 transition-duration-300">Landscaping</a>
-                        <a href="{{ route('service') }}" class="text-gray-700 hover:text-green-600 transition-duration-300">Service</a>
-                        
-                    </div>     
-
-                    <div class="flex items-center space-x-4" >
-                        <a href="{{ route('cart') }}" class="text-gray-700 hover:text-green-600 transition duration-300">
-                            <i class="fas fa-shopping-cart text-xl"></i>
-                            <span class="bg-green-600 text-white rounded-full px-2 py-1 text-xs ml-1" id="cart-count">0</span>
-                        </a>    
-                        <button onclick="openModal('loginModal')" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-300">Login</button>
-                    <button onclick="openModal('registerModal')" class="bg-green-800 text-white px-4 py-2 rounded-lg hover:bg-green-900 transition duration-300">Register</button>
-                    </div>
-                </div>
-        </div>    
-    </nav>
+    @include('partial.navbar')
 
     <!-- Hero Section -->
     <section class="hero-bg py-32 text-white" style="background-image: url('{{ asset('images/landscaping03.jpg') }}');">
@@ -214,7 +180,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Landscape 1 -->
                 <div class="landscape-card bg-white rounded-lg shadow-lg overflow-hidden h-64 cursor-pointer" onclick="selectLandscape('Modern Zen Garden', 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
-                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                    <img src="{{ asset('images/morden gez garden.png') }}" 
                          alt="Modern Zen Garden" class="w-full h-full object-cover">
                     <div class="landscape-overlay"></div>
                     <div class="landscape-content">
@@ -228,7 +194,7 @@
 
                 <!-- Landscape 2 -->
                 <div class="landscape-card bg-white rounded-lg shadow-lg overflow-hidden h-64 cursor-pointer" onclick="selectLandscape('Tropical Paradise', 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
-                    <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                    <img src="{{ asset('images/Tropical paradise.jpg') }}" 
                          alt="Tropical Paradise" class="w-full h-full object-cover">
                     <div class="landscape-overlay"></div>
                     <div class="landscape-content">
@@ -242,7 +208,7 @@
 
                 <!-- Landscape 3 -->
                 <div class="landscape-card bg-white rounded-lg shadow-lg overflow-hidden h-64 cursor-pointer" onclick="selectLandscape('Mediterranean Villa', 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                    <img src="{{ asset('images/Mediterranean Villa.jpg') }}" 
                          alt="Mediterranean Villa" class="w-full h-full object-cover">
                     <div class="landscape-overlay"></div>
                     <div class="landscape-content">
@@ -256,7 +222,7 @@
 
                 <!-- Landscape 4 -->
                 <div class="landscape-card bg-white rounded-lg shadow-lg overflow-hidden h-64 cursor-pointer" onclick="selectLandscape('English Country Garden', 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
-                    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                    <img src="{{ asset('images/English Country Garden.jpg') }}" 
                          alt="English Country Garden" class="w-full h-full object-cover">
                     <div class="landscape-overlay"></div>
                     <div class="landscape-content">
@@ -270,7 +236,7 @@
 
                 <!-- Landscape 5 -->
                 <div class="landscape-card bg-white rounded-lg shadow-lg overflow-hidden h-64 cursor-pointer" onclick="selectLandscape('Modern Minimalist', 'https://images.unsplash.com/photo-1574263867128-81beb7aa6d84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
-                    <img src="https://images.unsplash.com/photo-1574263867128-81beb7aa6d84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                    <img src="{{ asset('images/Modern Minimalist.png') }}" 
                          alt="Modern Minimalist" class="w-full h-full object-cover">
                     <div class="landscape-overlay"></div>
                     <div class="landscape-content">
@@ -284,7 +250,7 @@
 
                 <!-- Landscape 6 -->
                 <div class="landscape-card bg-white rounded-lg shadow-lg overflow-hidden h-64 cursor-pointer" onclick="selectLandscape('Desert Oasis', 'https://images.unsplash.com/photo-1565011523534-747a8601c1b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
-                    <img src="https://images.unsplash.com/photo-1565011523534-747a8601c1b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                    <img src="{{ asset('images/Desert Oasis.jpg') }}" 
                          alt="Desert Oasis" class="w-full h-full object-cover">
                     <div class="landscape-overlay"></div>
                     <div class="landscape-content">
@@ -298,7 +264,7 @@
 
                 <!-- Landscape 7 -->
                 <div class="landscape-card bg-white rounded-lg shadow-lg overflow-hidden h-64 cursor-pointer" onclick="selectLandscape('Japanese Garden', 'https://images.unsplash.com/photo-1523726491678-bf852e717f6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
-                    <img src="https://images.unsplash.com/photo-1523726491678-bf852e717f6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                    <img src="{{ asset('images/Japanese Garden.jpg') }}" 
                          alt="Japanese Garden" class="w-full h-full object-cover">
                     <div class="landscape-overlay"></div>
                     <div class="landscape-content">
@@ -312,7 +278,7 @@
 
                 <!-- Landscape 8 -->
                 <div class="landscape-card bg-white rounded-lg shadow-lg overflow-hidden h-64 cursor-pointer" onclick="selectLandscape('Woodland Retreat', 'https://images.unsplash.com/photo-1604334512875-e0c17b0a0e4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
-                    <img src="https://images.unsplash.com/photo-1604334512875-e0c17b0a0e4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                    <img src="{{ asset('images/Woodland Retreat.jpg') }}" 
                          alt="Woodland Retreat" class="w-full h-full object-cover">
                     <div class="landscape-overlay"></div>
                     <div class="landscape-content">
@@ -326,7 +292,7 @@
 
                 <!-- Landscape 9 -->
                 <div class="landscape-card bg-white rounded-lg shadow-lg overflow-hidden h-64 cursor-pointer" onclick="selectLandscape('Cottage Garden', 'https://images.unsplash.com/photo-1555252333-9f8e92e65df9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
-                    <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                    <img src="{{ asset('images/Cottage Garden.jpg') }}" 
                          alt="Cottage Garden" class="w-full h-full object-cover">
                     <div class="landscape-overlay"></div>
                     <div class="landscape-content">
@@ -340,7 +306,7 @@
 
                 <!-- Landscape 10 -->
                 <div class="landscape-card bg-white rounded-lg shadow-lg overflow-hidden h-64 cursor-pointer" onclick="selectLandscape('Urban Rooftop', 'https://images.unsplash.com/photo-1597149332808-0317b7c64b17?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
-                    <img src="https://images.unsplash.com/photo-1597149332808-0317b7c64b17?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                    <img src="{{ asset('images/Urban Rooftop.jpeg') }}"  
                          alt="Urban Rooftop" class="w-full h-full object-cover">
                     <div class="landscape-overlay"></div>
                     <div class="landscape-content">
@@ -462,70 +428,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-leaf text-green-400 text-2xl mr-2"></i>
-                        <span class="text-xl font-bold">GreenScape</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">
-                        Transform your space with our premium plants and professional landscaping services.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-facebook text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-twitter text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-instagram text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-youtube text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.php" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Plants</a></li>
-                        <li><a href="landscaping.php" class="text-green-400 font-semibold">Landscaping</a></li>
-                        <li><a href="services.php" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
-                        <li><a href="contact.php" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Plant Categories</h3>
-                    <ul class="space-y-2">
-                        <li><a href="indoor-plants.php" class="text-gray-400 hover:text-white transition duration-300">Indoor Plants</a></li>
-                        <li><a href="outdoor-plants.php" class="text-gray-400 hover:text-white transition duration-300">Outdoor Plants</a></li>
-                        <li><a href="herb-plants.php" class="text-gray-400 hover:text-white transition duration-300">Herb Plants</a></li>
-                        <li><a href="flowering-plants.php" class="text-gray-400 hover:text-white transition duration-300">Flowering Plants</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
-                    <div class="space-y-2 text-gray-400">
-                        <p><i class="fas fa-map-marker-alt mr-2"></i>123 Garden Street, Green City</p>
-                        <p><i class="fas fa-phone mr-2"></i>+1 (555) 123-4567</p>
-                        <p><i class="fas fa-envelope mr-2"></i>info@greenscape.com</p>
-                        <p><i class="fas fa-clock mr-2"></i>Mon-Sat: 9AM-6PM</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 GreenScape. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    @include('partial.footer')
 
     <!-- Booking Modal -->
     <div id="bookingModal" class="modal">

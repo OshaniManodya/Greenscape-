@@ -143,40 +143,7 @@ if (isset($_GET['logout'])) {
     </style>
 </head>
 <body>
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <i class="fas fa-leaf text-green-600 text-2xl mr-2"></i>
-                    <span class="text-xl font-bold text-green-800">GreenScape</span>
-                </div>       
-                <div class="hidden md:flex space-x-8">
-                    <a href="{{ route('home') }}" class="text-gray-700 hover:text-green-600 transition duration-300">Home</a>
-                    <div class="relative group">
-                        <a href="#" class="text-gray-700 hover:text-green-600 transition duration-300">Plants</a>
-                        <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 w-48">
-                            <a href="{{ route('plants.indoor') }}" class="block px-4 py-2 text-gray-700 hover:bg-green-50">Indoor Plants</a>
-                            <a href="{{ route('plants.outdoor') }}" class="block px-4 py-2 text-gray-700 hover:bg-green-50">Outdoor Plants</a>
-                            <a href="{{ route('plants.herb') }}" class="block px-4 py-2 text-gray-700 hover:bg-green-50">Herb Plants</a>
-                            <a href="{{ route('plants.flowering') }}" class="block px-4 py-2 text-gray-700 hover:bg-green-50">Flowering Plants</a>
-                        </div>
-                    </div>   
-                    <a href="{{ route('landscaping') }}" class="text-gray-700 hover:text-green-600 transition-duration-300">Landscaping</a>
-                    <a href="{{ route('service') }}" class="text-gray-700 hover:text-green-600 transition-duration-300">Service</a>
-                    
-                </div>     
-
-                <div class="flex items-center space-x-4">
-                    <a href="{{ route('cart') }}" class="text-gray-700 hover:text-green-600 transition duration-300">
-                        <i class="fas fa-shopping-cart text-xl"></i>
-                        <span class="bg-green-600 text-white rounded-full px-2 py-1 text-xs ml-1" id="cart-count">0</span>
-                    </a>    
-                    <button onclick="openModal('loginModal')" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-300">Login</button>
-                    <button onclick="openModal('registerModal')" class="bg-green-800 text-white px-4 py-2 rounded-lg hover:bg-green-900 transition duration-300">Register</button>
-                </div>
-            </div>
-        </div>    
-    </nav>
+    @include('partial.navbar')
 
     <div class="min-h-screen bg-gradient-to-br from-green-950 to-green-700">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -530,70 +497,7 @@ if (isset($_GET['logout'])) {
     </div>   
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-leaf text-green-400 text-2xl mr-2"></i>
-                        <span class="text-xl font-bold">GreenScape</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">
-                        Transform your space with our premium plants and professional landscaping services.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-facebook text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-twitter text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-instagram text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-youtube text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Plants</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Landscaping</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Plant Categories</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Indoor Plants</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Outdoor Plants</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Herb Plants</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Flowering Plants</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
-                    <div class="space-y-2 text-gray-400">
-                        <p><i class="fas fa-map-marker-alt mr-2"></i>123 Garden Street, Green City</p>
-                        <p><i class="fas fa-phone mr-2"></i>+1 (555) 123-4567</p>
-                        <p><i class="fas fa-envelope mr-2"></i>info@greenscape.com</p>
-                        <p><i class="fas fa-clock mr-2"></i>Mon-Sat: 9AM-6PM</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 GreenScape. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    @include('partial.footer')
 
     <!-- Login Modal -->
     <div id="loginModal" class="modal">

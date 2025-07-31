@@ -10,14 +10,14 @@ ini_set('display_errors', 1);
 if (!isset($_SESSION['cart'])) {
     // Cart was never initialized
     $_SESSION['cart'] = [];
-    header('Location: cart.blade.php');
+    header('Location: cart');
     exit;
 }
 
 if (empty($_SESSION['cart'])) {
     // Cart exists but is empty
     $_SESSION['checkout_error'] = 'Your cart is empty. Please add items before checkout.';
-    header('Location: cart.blade.php');
+    header('Location: cart');
     exit;
 }
 
@@ -124,20 +124,7 @@ $orderData = json_encode([
     <div id="error-message" class="error-message max-w-6xl mx-auto mt-4"></div>
 
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <i class="fas fa-leaf text-green-600 text-2xl mr-2"></i>
-                    <a href="index.php" class="text-xl font-bold text-green-800">GreenScape</a>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <span class="text-gray-600">Secure Checkout</span>
-                    <i class="fas fa-lock text-green-600"></i>
-                </div>
-            </div>
-        </div>
-    </nav>
+     @include('partial.navbar')
 
     <!-- Page Content -->
     <div class="max-w-6xl mx-auto px-4 pb-16">
@@ -182,11 +169,7 @@ $orderData = json_encode([
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p>&copy; 2024 GreenScape. All rights reserved.</p>
-        </div>
-    </footer>
+    @include('partial.footer')
 
     <script>
         // Initialize with data from PHP

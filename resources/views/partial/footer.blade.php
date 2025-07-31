@@ -32,7 +32,7 @@
                         <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Plants</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Landscaping</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        
                     </ul>
                 </div>
                 
