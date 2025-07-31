@@ -34,6 +34,11 @@ Route::get('/booking', [BookingController::class, 'index'])->name('booking');
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware('auth')->name('dashboard');
+
+
 // Authentication routes
 Route::get('/login', function () {
     return view('auth.login'); // Better to put login in auth folder

@@ -134,7 +134,7 @@
                         </div>   
                         <a href="{{ route('landscaping') }}" class="text-gray-700 hover:text-green-600 transition-duration-300">Landscaping</a>
                         <a href="{{ route('service') }}" class="text-gray-700 hover:text-green-600 transition-duration-300">Service</a>
-                        <a href="{{ route('booking') }}" class="text-gray-700 hover:text-green-600 transition-duration-300">Booking</a>
+                    
                     </div>     
 
                     <div class="flex items-center space-x-4" >
@@ -151,7 +151,7 @@
     <!--Hero section with image slider-->
     <section class="slider-container">
         <div class="slider-track" id="slider-track">
-            <div class="slider-slide" style="background-image: url('{{ asset('images/landscaping01.jpg') }}');">
+            <div class="slider-slide" style="background-image: url('{{ asset('images/landscaping02.jpg') }}');">
                 <div class="gradient-overlay w-full h-full flex items-center justify-center">
                     <div class="text-center text-white">
                         <hl class="text-5xl font-bold mb-4">Transform Your Garden</h1>
@@ -161,7 +161,7 @@
                 </div>
             </div> 
             
-            <div class="slider-slide" style="background-image: url('{{ asset('images/landscaping02.jpg') }}');">
+            <div class="slider-slide" style="background-image: url('{{ asset('images/landscaping01.jpg') }}');">
                 <div class="gradient-overlay w-full h-full flex items-center justify-center">
                     <div class="text-center text-white">
                         <hl class="text-5xl font-bold mb-4">Premium Plant Collection</h1>

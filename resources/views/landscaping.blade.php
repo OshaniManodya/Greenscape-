@@ -133,7 +133,7 @@
                         </div>   
                         <a href="{{ route('landscaping') }}" class="text-gray-700 hover:text-green-600 transition-duration-300">Landscaping</a>
                         <a href="{{ route('service') }}" class="text-gray-700 hover:text-green-600 transition-duration-300">Service</a>
-                        <a href="{{ route('booking') }}" class="text-gray-700 hover:text-green-600 transition-duration-300">Booking</a>
+                        
                     </div>     
 
                     <div class="flex items-center space-x-4" >
@@ -149,7 +149,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-bg py-32 text-white">
+    <section class="hero-bg py-32 text-white" style="background-image: url('{{ asset('images/landscaping03.jpg') }}');">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <h1 class="text-5xl font-bold mb-6">Transform Your Outdoor Space</h1>
             <p class="text-xl mb-8 max-w-3xl mx-auto">
