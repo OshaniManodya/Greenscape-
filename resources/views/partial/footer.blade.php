@@ -28,10 +28,10 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Plants</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Landscaping</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="/home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="/plants" class="text-gray-400 hover:text-white transition duration-300">Plants</a></li>
+                        <li><a href="/landscaping" class="text-gray-400 hover:text-white transition duration-300">Landscaping</a></li>
+                        <li><a href="/service" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
                         
                     </ul>
                 </div>
@@ -39,18 +39,18 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Plant Categories</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Indoor Plants</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Outdoor Plants</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Herb Plants</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Flowering Plants</a></li>
+                        <li><a href="/plants/indoor" class="text-gray-400 hover:text-white transition duration-300">Indoor Plants</a></li>
+                        <li><a href="/plants/outdoor" class="text-gray-400 hover:text-white transition duration-300">Outdoor Plants</a></li>
+                        <li><a href="/plants/herb" class="text-gray-400 hover:text-white transition duration-300">Herb Plants</a></li>
+                        <li><a href="/plants/flowering" class="text-gray-400 hover:text-white transition duration-300">Flowering Plants</a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
                     <div class="space-y-2 text-gray-400">
-                        <p><i class="fas fa-map-marker-alt mr-2"></i>123 Garden Street, Green City</p>
-                        <p><i class="fas fa-phone mr-2"></i>+1 (555) 123-4567</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>55A Greenland,colombo 10</p>
+                        <p><i class="fas fa-phone mr-2"></i>077-5152320</p>
                         <p><i class="fas fa-envelope mr-2"></i>info@greenscape.com</p>
                         <p><i class="fas fa-clock mr-2"></i>Mon-Sat: 9AM-6PM</p>
                     </div>
