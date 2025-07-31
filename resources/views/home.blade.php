@@ -143,7 +143,7 @@
         </div>
         
         <!-- Slide 3 -->
-        <div class="slider-slide" style="background-image: url('{{ asset('images/landscaping05.jpg') }}');">
+        <div class="slider-slide" style="background-image: url('{{ asset('images/landscaping10.png') }}');">
             <div class="w-full h-full flex items-center justify-center">
                 <div class="text-center text-white bg-black bg-opacity-40 p-8 rounded-lg">
                     <h1 class="text-5xl font-bold mb-4">Professional Landscaping</h1>
@@ -236,7 +236,7 @@
                     </div>
                 </div>    
                 <div class="grid grid-cols-2 gap-4">
-                    <img src="images/landscaping05.jpg" alt="Garden design" class="rounded-lg shadow-lg"> 
+                    <img src="images/landscaping09.jpeg" alt="Garden design" class="rounded-lg shadow-lg"> 
                     <img src="images/landscaping06.jpg" alt="Landscape" class="rounded-lg shadow-lg mt-4"> 
                     <img src="images/landscaping07.jpeg" alt="Plants" class="rounded-lg shadow-lg">                 
                     <img src="images/landscaping08.jpeg" alt="Garden" class="rounded-lg shadow-lg mt-4"> 

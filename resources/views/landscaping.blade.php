@@ -115,7 +115,7 @@
     @include('partial.navbar')
 
     <!-- Hero Section -->
-    <section class="hero-bg py-32 text-white" style="background-image: url('{{ asset('images/landscaping03.jpg') }}');">
+    <section class="hero-bg py-32 text-black" style="background-image: url('{{ asset('images/landscaping05.jpg') }}');">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <h1 class="text-5xl font-bold mb-6">Transform Your Outdoor Space</h1>
             <p class="text-xl mb-8 max-w-3xl mx-auto">
