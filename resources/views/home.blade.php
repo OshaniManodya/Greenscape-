@@ -111,6 +111,28 @@
         .close:hover {
             color: black;
         }
+
+        /*cart*/
+        .cart-animation {
+            animation: addToCart 0.5s ease-in-out;
+        }
+        
+        @keyframes addToCart {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -435,21 +457,51 @@
             });
         }
         
-        // Cart functionality
-        let cart = [];
-        
         function addToCart(plantName, price) {
-            cart.push({name: plantName, price: price});
+            const plant = {
+                id: Date.now(),
+                name: plantName,
+                price: price,
+                quantity: 1
+            };
+            
+            cart.push(plant);
             updateCartCount();
-            alert(`${plantName} added to cart!`);
+            
+            // Add animation to button
+            event.target.classList.add('cart-animation');
+            setTimeout(() => {
+                event.target.classList.remove('cart-animation');
+            }, 500);
+            
+            // Show success notification
+            showNotification(`${plantName} added to cart!`);
         }
         
         function updateCartCount() {
             document.getElementById('cart-count').textContent = cart.length;
         }
         
-        // Initialize cart count
-        updateCartCount();
+        // ========== NOTIFICATION SYSTEM ==========
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'fixed top-20 right-4 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg z-50 transform translate-x-full';
+            notification.innerHTML = `<i class="fas fa-check-circle mr-2"></i>${message}`;
+            document.body.appendChild(notification);
+            
+            // Slide in animation
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+                notification.style.transition = 'transform 0.3s ease';
+            }, 100);
+            
+            // Slide out and remove
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
     </script>
     
 </body>
