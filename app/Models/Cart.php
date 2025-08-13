@@ -1,17 +1,21 @@
 <?php
-// In cart.php
-session_start();
+// app/Models/Cart.php
+namespace App\Models;
 
-// When adding items to cart
-$_SESSION['cart'][] = [
-    'id' => $productId,
-    'name' => $productName,
-    'price' => $productPrice,
-    'quantity' => $quantity
-];
+use Illuminate\Database\Eloquent\Model;
 
-// Verify it worked
-echo '<pre>Cart contents: ';
-print_r($_SESSION['cart']);
-echo '</pre>';
+class Cart extends Model
+{
+    protected $fillable = ['user_id', 'product_id', 'quantity'];
+    
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+}
 ?>

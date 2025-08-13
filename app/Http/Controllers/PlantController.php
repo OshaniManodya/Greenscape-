@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Product;
 
 class PlantController extends Controller
 {
@@ -15,20 +16,13 @@ class PlantController extends Controller
         ]);
     }
 
-    public function indoor()
+   
+       public function indoor()
     {
-        $plants = [
-            ['name' => 'Snake Plant', 'price' => 1200, 'image' => '/images/snakeplant.jpg'],
-            ['name' => 'Peace Lily', 'price' => 1500, 'image' => '/images/peacelily.jpg'],
-        ];
-
-        $this->setCommonSessionData($plants);
-
-        return view('plants.indoor', [
-            'indoorPlants' => $plants,
-            'pageTitle' => 'Indoor Plants Collection'
-        ]);
+        $products = Product::where('category', 'indoor')->get();
+        return view('plants.indoor', ['products' => $products]);
     }
+    
 
     public function outdoor()
     {

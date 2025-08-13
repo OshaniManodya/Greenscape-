@@ -18,10 +18,19 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    'name',
+    'email',
+    'password',
+    // Add these new fields
+    'phone',
+    'address', 
+    'city',
+    'state',
+    'zip_code',
+    'property_type',
+    'preferences',
+    'profile_photo'
+];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -45,4 +54,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    // app/Models/User.php
+    public function cartItems()
+   {
+    return $this->hasMany(Cart::class);
+   }
 }
